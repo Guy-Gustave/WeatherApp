@@ -9,3 +9,34 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.searchbar {
+  text-align: center;
+  background-color: rgb(226, 221, 221);
+  width: 55%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 10px 2px;
+  label {
+    font-size: 15px;
+  }
+}
+.search_button {
+  color: rgb(253, 253, 253);
+  background-color: rgb(66, 64, 64);
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 17px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.search_button:hover {
+  color: rgb(66, 64, 64);
+  background-color: rgb(253, 253, 253);
+}
+.container {
+  border: 2px solid white;
+  margin: 5px 10px;
+  height: 70vh;
+  background-color: rgba(255, 255, 255, 0.4);
+}

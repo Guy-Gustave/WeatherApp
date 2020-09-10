@@ -5,4 +5,41 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.searchbar {
+  text-align: center;
+  background-color: #e2dddd;
+  width: 55%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 10px 2px;
+}
+
+.searchbar label {
+  font-size: 15px;
+}
+
+.search_button {
+  color: #fdfdfd;
+  background-color: #424040;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 17px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+
+.search_button:hover {
+  color: #424040;
+  background-color: #fdfdfd;
+}
+
+.container {
+  border: 2px solid white;
+  margin: 5px 10px;
+  height: 70vh;
+  background-color: rgba(255, 255, 255, 0.4);
+}
 /*# sourceMappingURL=style.css.map */
