@@ -77,3 +77,16 @@ body {
     ),
     url('  https://images.pexels.com/photos/4241/cold-snow-black-and-white-road.jpg?auto=compress&cs=tinysrgb&h=750&w=1260');
 }
+.temp_unit {
+  border: 1px solid gray;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+}
+.none {
+  display: none;
+}

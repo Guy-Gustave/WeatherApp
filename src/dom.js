@@ -5,7 +5,14 @@ const temp = document.getElementById('temp');
 const desc = document.getElementById('desc');
 const humidity = document.getElementById('humidity');
 const body = document.getElementById('body');
-
+const tempswitchBtn = document.getElementById('temp_unit');
 export {
-  searchbar, searchbutton, name, temp, desc, humidity, body,
+  searchbar,
+  searchbutton,
+  name,
+  temp,
+  desc,
+  humidity,
+  body,
+  tempswitchBtn,
 };
