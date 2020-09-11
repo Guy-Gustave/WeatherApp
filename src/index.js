@@ -1,22 +1,49 @@
-import { searchbar, searchbutton } from './dom';
+import {
+  searchbar,
+  searchbutton,
+  name,
+  temp,
+  desc,
+  humidity,
+  body,
+} from './dom';
 
-const infodis = document.getElementById('desc');
-let key = 'bdc41b55a4c712c6598fce628e1a5254';
-let url = 'https://api.openweathermap.org/data/2.5/weather?q=';
+import getweather from './getdata';
 
-let rdd = {};
-const getweather = async (term) => {
-  const res = await (await fetch(`${url}${term}&appid=${key}`)).json();
-  return res;
+const emptyresutl = () => {
+  desc.innerHTML = '';
+  name.innerHTML = '';
+  temp.innerHTML = '';
+  humidity.innerHTML = '';
 };
-
 const datapros = async (term) => {
   const data = await getweather(term);
-  console.log(data.weather[0].description);
-  infodis.innerHTML = data.weather[0].description;
+  if (data.cod === 200) {
+    emptyresutl();
+    desc.innerHTML = ` Weather : ${data.weather[0].description}`;
+    name.innerHTML = data.name;
+    temp.innerHTML = `${data.main.temp} Celcius`;
+    humidity.innerHTML = `Humidity : ${data.main.humidity} %`;
+    if (data.weather[0].main === 'Rain') {
+      body.className = 'rain';
+    } else if (
+      data.weather[0].main === 'Haze' ||
+      data.weather[0].main === 'Clouds'
+    ) {
+      body.className = 'haze';
+    } else {
+      body.className = 'clear';
+    }
+  } else {
+    emptyresutl();
+    desc.innerHTML = "Sorry ,we couldn't find the city :(";
+    body.className = 'body';
+    desc.className = 'error';
+  }
 };
 datapros('fes');
 searchbutton.addEventListener('click', (e) => {
   e.preventDefault();
   datapros(searchbar.value);
+  searchbar.value = '';
 });

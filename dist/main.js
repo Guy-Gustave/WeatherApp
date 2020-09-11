@@ -90,11 +90,23 @@
 /*!********************!*\
   !*** ./src/dom.js ***!
   \********************/
-/*! exports provided: searchbar, searchbutton */
+/*! exports provided: searchbar, searchbutton, name, temp, desc, humidity, body */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchbar\", function() { return searchbar; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchbutton\", function() { return searchbutton; });\nconst searchbar = document.getElementById('search_term');\nconst searchbutton = document.getElementById('search_button');\n\n\n\n\n//# sourceURL=webpack:///./src/dom.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchbar\", function() { return searchbar; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchbutton\", function() { return searchbutton; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"name\", function() { return name; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"temp\", function() { return temp; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"desc\", function() { return desc; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"humidity\", function() { return humidity; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"body\", function() { return body; });\nconst searchbar = document.getElementById('search_term');\nconst searchbutton = document.getElementById('search_button');\nconst name = document.getElementById('city_name');\nconst temp = document.getElementById('temp');\nconst desc = document.getElementById('desc');\nconst humidity = document.getElementById('humidity');\nconst body = document.getElementById('body');\n\n\n\n\n//# sourceURL=webpack:///./src/dom.js?");
+
+/***/ }),
+
+/***/ "./src/getdata.js":
+/*!************************!*\
+  !*** ./src/getdata.js ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst key = 'bdc41b55a4c712c6598fce628e1a5254';\nconst url = 'https://api.openweathermap.org/data/2.5/weather?q=';\n\nconst getweather = async (term) => {\n  const res = await (\n    await fetch(`${url}${term}&units=metric&appid=${key}`)\n  ).json();\n  return res;\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (getweather);\n\n\n//# sourceURL=webpack:///./src/getdata.js?");
 
 /***/ }),
 
@@ -106,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n\n\nconst infodis = document.getElementById('desc');\nlet key = 'bdc41b55a4c712c6598fce628e1a5254';\nlet url = 'https://api.openweathermap.org/data/2.5/weather?q=';\n\nlet rdd = {};\nconst getweather = async (term) => {\n  const res = await (await fetch(`${url}${term}&appid=${key}`)).json();\n  return res;\n};\n\nconst datapros = async (term) => {\n  const data = await getweather(term);\n  console.log(data.weather[0].description);\n  infodis.innerHTML = data.weather[0].description;\n};\ndatapros('fes');\n_dom__WEBPACK_IMPORTED_MODULE_0__[\"searchbutton\"].addEventListener('click', (e) => {\n  e.preventDefault();\n  datapros(_dom__WEBPACK_IMPORTED_MODULE_0__[\"searchbar\"].value);\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n/* harmony import */ var _getdata__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getdata */ \"./src/getdata.js\");\n\n\n\n\nconst emptyresutl = () => {\n  _dom__WEBPACK_IMPORTED_MODULE_0__[\"desc\"].innerHTML = '';\n  _dom__WEBPACK_IMPORTED_MODULE_0__[\"name\"].innerHTML = '';\n  _dom__WEBPACK_IMPORTED_MODULE_0__[\"temp\"].innerHTML = '';\n  _dom__WEBPACK_IMPORTED_MODULE_0__[\"humidity\"].innerHTML = '';\n};\nconst datapros = async (term) => {\n  const data = await Object(_getdata__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(term);\n  if (data.cod === 200) {\n    emptyresutl();\n    _dom__WEBPACK_IMPORTED_MODULE_0__[\"desc\"].innerHTML = ` Weather : ${data.weather[0].description}`;\n    _dom__WEBPACK_IMPORTED_MODULE_0__[\"name\"].innerHTML = data.name;\n    _dom__WEBPACK_IMPORTED_MODULE_0__[\"temp\"].innerHTML = `${data.main.temp} Celcius`;\n    _dom__WEBPACK_IMPORTED_MODULE_0__[\"humidity\"].innerHTML = `Humidity : ${data.main.humidity} %`;\n    if (data.weather[0].main === 'Rain') {\n      _dom__WEBPACK_IMPORTED_MODULE_0__[\"body\"].className = 'rain';\n    } else if (\n      data.weather[0].main === 'Haze' ||\n      data.weather[0].main === 'Clouds'\n    ) {\n      _dom__WEBPACK_IMPORTED_MODULE_0__[\"body\"].className = 'haze';\n    } else {\n      _dom__WEBPACK_IMPORTED_MODULE_0__[\"body\"].className = 'clear';\n    }\n  } else {\n    emptyresutl();\n    _dom__WEBPACK_IMPORTED_MODULE_0__[\"desc\"].innerHTML = \"Sorry ,we couldn't find the city :(\";\n    _dom__WEBPACK_IMPORTED_MODULE_0__[\"body\"].className = 'body';\n    _dom__WEBPACK_IMPORTED_MODULE_0__[\"desc\"].className = 'error';\n  }\n};\ndatapros('fes');\n_dom__WEBPACK_IMPORTED_MODULE_0__[\"searchbutton\"].addEventListener('click', (e) => {\n  e.preventDefault();\n  datapros(_dom__WEBPACK_IMPORTED_MODULE_0__[\"searchbar\"].value);\n  _dom__WEBPACK_IMPORTED_MODULE_0__[\"searchbar\"].value = '';\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

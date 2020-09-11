@@ -1,13 +1,15 @@
 body {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.body {
   background: linear-gradient(
       to right,
       rgba(243, 237, 237, 0.335),
       rgba(128, 128, 128, 0.315)
     ),
     url('./images/background.jpg');
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 .searchbar {
   text-align: center;
@@ -39,4 +41,39 @@ body {
   margin: 5px 10px;
   height: 70vh;
   background-color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  position: relative;
+  .result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.error {
+  color: rgb(199, 36, 36);
+}
+.rain {
+  background: linear-gradient(
+      to right,
+      rgba(243, 237, 237, 0.335),
+      rgba(128, 128, 128, 0.315)
+    ),
+    url('  https://images.pexels.com/photos/1166991/pexels-photo-1166991.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+}
+.clear {
+  background: linear-gradient(
+      to right,
+      rgba(243, 237, 237, 0.335),
+      rgba(128, 128, 128, 0.315)
+    ),
+    url('https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+}
+.haze {
+  background: linear-gradient(
+      to right,
+      rgba(243, 237, 237, 0.335),
+      rgba(128, 128, 128, 0.315)
+    ),
+    url('  https://images.pexels.com/photos/4241/cold-snow-black-and-white-road.jpg?auto=compress&cs=tinysrgb&h=750&w=1260');
 }
