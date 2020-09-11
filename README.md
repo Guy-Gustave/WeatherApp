@@ -40,6 +40,14 @@ Copy the absolute path of the index file, paste on your browser and click on ent
 
 ## for webpack run:
 
+the dependencies needed in this project are:
+
+- webpack
+- webpack-cli
+- webpack-dev-server
+
+**You can Install the dependencies with this commands**
+
 ```bash
 $ npm run build
 

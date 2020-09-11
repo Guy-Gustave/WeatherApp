@@ -22,10 +22,10 @@ const emptyresutl = () => {
 const tempswitch = (val, type) => {
   let temp = null;
   if (type === '℃') {
-    temp = (val * 9) / 5 + 32;
+    temp = (val * (9 / 5) + 32).toFixed(2);
     type = '℉';
   } else {
-    temp = (val - 32) * (5 / 9);
+    temp = ((val - 32) * (5 / 9)).toFixed(2);
     type = '℃';
   }
   return { temp, type };
