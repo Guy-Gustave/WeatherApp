@@ -27,8 +27,8 @@ const datapros = async (term) => {
     if (data.weather[0].main === 'Rain') {
       body.className = 'rain';
     } else if (
-      data.weather[0].main === 'Haze' ||
-      data.weather[0].main === 'Clouds'
+      data.weather[0].main === 'Haze'
+      || data.weather[0].main === 'Clouds'
     ) {
       body.className = 'haze';
     } else {

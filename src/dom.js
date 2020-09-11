@@ -6,4 +6,6 @@ const desc = document.getElementById('desc');
 const humidity = document.getElementById('humidity');
 const body = document.getElementById('body');
 
-export { searchbar, searchbutton, name, temp, desc, humidity, body };
+export {
+  searchbar, searchbutton, name, temp, desc, humidity, body,
+};
