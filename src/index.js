@@ -62,7 +62,7 @@ const datapros = async (term) => {
     }
   } else {
     emptyresutl();
-    desc.innerHTML = "Sorry ,we couldn't find the city :(";
+    desc.innerHTML = data.message;
     body.className = 'body';
     desc.className = 'error';
   }
