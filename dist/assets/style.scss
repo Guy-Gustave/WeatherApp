@@ -1,0 +1,98 @@
+body {
+  height: 100vh;
+}
+.body {
+  background: linear-gradient(
+      to right,
+      rgba(243, 237, 237, 0.335),
+      rgba(128, 128, 128, 0.315)
+    ),
+    url('./images/background.jpg');
+  background-size: cover;
+}
+.searchbar {
+  text-align: center;
+  background-color: rgb(226, 221, 221);
+  width: 55%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 10px 2px;
+  label {
+    font-size: 15px;
+  }
+}
+.search_button {
+  color: rgb(253, 253, 253);
+  background-color: rgb(66, 64, 64);
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 17px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.search_button:hover {
+  color: rgb(66, 64, 64);
+  background-color: rgb(253, 253, 253);
+}
+.container {
+  border: 2px solid white;
+  margin: 5px 10px;
+  height: 70vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  position: relative;
+  .result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.error {
+  color: rgb(199, 36, 36);
+}
+.rain {
+  background: linear-gradient(
+      to right,
+      rgba(243, 237, 237, 0.335),
+      rgba(128, 128, 128, 0.315)
+    ),
+    url('  https://images.pexels.com/photos/1166991/pexels-photo-1166991.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+  background-size: cover;
+}
+.clear {
+  background: linear-gradient(
+      to right,
+      rgba(243, 237, 237, 0.335),
+      rgba(128, 128, 128, 0.315)
+    ),
+    url('https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+  background-size: cover;
+}
+.haze {
+  background: linear-gradient(
+      to right,
+      rgba(243, 237, 237, 0.335),
+      rgba(128, 128, 128, 0.315)
+    ),
+    url('  https://images.pexels.com/photos/4241/cold-snow-black-and-white-road.jpg?auto=compress&cs=tinysrgb&h=750&w=1260');
+  background-size: cover;
+}
+.temp_unit {
+  border: 1px solid gray;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+  display: inline-block;
+  background-color: white;
+  padding-top: 5px;
+  box-sizing: border-box;
+}
+.none {
+  display: none;
+}

@@ -1,0 +1,101 @@
+body {
+  height: 100vh;
+}
+
+.body {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(243, 237, 237, 0.335)), to(rgba(128, 128, 128, 0.315))), url("./images/background.jpg");
+  background: linear-gradient(to right, rgba(243, 237, 237, 0.335), rgba(128, 128, 128, 0.315)), url("./images/background.jpg");
+  background-size: cover;
+}
+
+.searchbar {
+  text-align: center;
+  background-color: #e2dddd;
+  width: 55%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 10px 2px;
+}
+
+.searchbar label {
+  font-size: 15px;
+}
+
+.search_button {
+  color: #fdfdfd;
+  background-color: #424040;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 17px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+
+.search_button:hover {
+  color: #424040;
+  background-color: #fdfdfd;
+}
+
+.container {
+  border: 2px solid white;
+  margin: 5px 10px;
+  height: 70vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  position: relative;
+}
+
+.container .result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.error {
+  color: #c72424;
+}
+
+.rain {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(243, 237, 237, 0.335)), to(rgba(128, 128, 128, 0.315))), url("  https://images.pexels.com/photos/1166991/pexels-photo-1166991.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background: linear-gradient(to right, rgba(243, 237, 237, 0.335), rgba(128, 128, 128, 0.315)), url("  https://images.pexels.com/photos/1166991/pexels-photo-1166991.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-size: cover;
+}
+
+.clear {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(243, 237, 237, 0.335)), to(rgba(128, 128, 128, 0.315))), url("https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background: linear-gradient(to right, rgba(243, 237, 237, 0.335), rgba(128, 128, 128, 0.315)), url("https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-size: cover;
+}
+
+.haze {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(243, 237, 237, 0.335)), to(rgba(128, 128, 128, 0.315))), url("  https://images.pexels.com/photos/4241/cold-snow-black-and-white-road.jpg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background: linear-gradient(to right, rgba(243, 237, 237, 0.335), rgba(128, 128, 128, 0.315)), url("  https://images.pexels.com/photos/4241/cold-snow-black-and-white-road.jpg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-size: cover;
+}
+
+.temp_unit {
+  border: 1px solid gray;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: inline-block;
+  background-color: white;
+  padding-top: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.none {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */

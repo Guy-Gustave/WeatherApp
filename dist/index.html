@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/style.css" rel="stylesheet" />
+    <title>Weather</title>
+  </head>
+  <body id="body" class="body">
+    <div class="searchbar">
+      <label for="search_term">Search for City : </label>
+      <input
+        id="search_term"
+        type="text"
+        placeholder="enter the name of the city..."
+      />
+      <input
+        class="search_button"
+        type="submit"
+        id="search_button"
+        value="search"
+      />
+    </div>
+    <div class="container">
+      <div class="result" id="result">
+        <h1 id="city_name"></h1>
+        <h2 id="desc"></h2>
+        <h2 id="temp"></h2>
+        <h2 id="humidity"></h2>
+        <button class="temp_unit" id="temp_unit">℃</button>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
