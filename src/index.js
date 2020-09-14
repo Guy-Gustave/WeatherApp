@@ -7,9 +7,20 @@ import {
   humidity,
   body,
   tempswitchBtn,
+  result,
 } from './dom';
-
 import getweather from './getdata';
+
+let switcher = tempswitchBtn;
+
+const createswitchbtn = (ty) => {
+  const btn = document.createElement('btn');
+  btn.className = 'temp_unit';
+  btn.id = 'temp_unit';
+  btn.innerHTML = ty;
+  result.appendChild(btn);
+  return btn;
+};
 
 const emptyresutl = () => {
   desc.innerHTML = '';
@@ -42,11 +53,11 @@ const datapros = async (term) => {
     tempswitchBtn.className = 'temp_unit';
 
     let tempoutput = data.main.temp;
-    tempswitchBtn.addEventListener('click', (e) => {
+    switcher.addEventListener('click', (e) => {
       e.preventDefault();
-      const tempSwitch = tempswitch(tempoutput, tempswitchBtn.innerHTML);
+      const tempSwitch = tempswitch(tempoutput, switcher.innerHTML);
       tempoutput = tempSwitch.temp;
-      tempswitchBtn.innerHTML = tempSwitch.type;
+      switcher.innerHTML = tempSwitch.type;
       temp.innerHTML = `${tempSwitch.temp} ${tempSwitch.type}`;
     });
 
@@ -70,6 +81,8 @@ const datapros = async (term) => {
 datapros('fes');
 searchbutton.addEventListener('click', (e) => {
   e.preventDefault();
+  switcher.remove();
+  switcher = createswitchbtn('℃');
   datapros(searchbar.value);
   searchbar.value = '';
 });
